@@ -2,11 +2,11 @@ name: CMake
 
 on:
   push:
-    paths:
-      - "src/**.cpp"
-      - "include/**.cpp"
-      - "src/**.h"
-      - "include/**.h"
+    #paths:
+      #- "src/**.cpp"
+      #- "include/**.cpp"
+      #- "src/**.h"
+      #- "include/**.h"
   workflow_dispatch:
     inputs:
       relName:
