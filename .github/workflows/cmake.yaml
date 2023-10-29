@@ -36,7 +36,7 @@ jobs:
         git submodule init
         git submodule update
     - name: Install dependencies
-      run: sudo apt-get install -y extra-cmake-modules qt6-base-dev build-essential libgl1-mesa-dev libarchive-dev libprotobuf-dev libcurl4-openssl-dev nlohmann-json3-dev
+      run: sudo apt-get install -y extra-cmake-modules qt6-base-dev build-essential libgl1-mesa-dev libarchive-dev libprotobuf-dev libcurl4-openssl-dev nlohmann-json3-dev gcc-multilib g++-multilib
     - name: Build
       # Build your program with the given configuration
       env:
@@ -77,6 +77,11 @@ jobs:
         #asset_path: ./opensteamclient.zip
         #asset_name: opensteamclient.zip
         #asset_content_type: application/zip
+    - name: Cache Gradle packages
+      uses: actions/cache@v3
+      with:
+        path: |
+          $PWD
     - name: Test
       working-directory: ${{github.workspace}}/build
       # Execute tests defined by the CMake configuration.  
