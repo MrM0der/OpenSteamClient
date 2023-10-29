@@ -36,7 +36,7 @@ jobs:
         git submodule init
         git submodule update
     - name: Install dependencies
-      run: sudo apt-get install -y extra-cmake-modules
+      run: sudo apt-get install -y extra-cmake-modules qt6-base-dev
     - name: Build
       # Build your program with the given configuration
       env:
