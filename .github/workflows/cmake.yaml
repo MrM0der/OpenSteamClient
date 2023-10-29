@@ -35,7 +35,8 @@ jobs:
       run: | 
         git submodule init
         git submodule update
-        
+    - name: Install dependencies
+      run: sudo apt-get install -y extra-cmake-modules
     - name: Build
       # Build your program with the given configuration
       env:
