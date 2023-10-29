@@ -88,7 +88,7 @@ void InstallGameDialog::on_InstallGameDialog_currentIdChanged(int id)
 
     if (ui->installLocationBox->currentIndex() == 0)
     {
-        this->setCurrentId(0);
+        //this->setCurrentId(0);
         QMessageBox msgBox;
         msgBox.setText("No library folder selected. Please pick a folder before continuing.");
         msgBox.exec();
@@ -98,7 +98,7 @@ void InstallGameDialog::on_InstallGameDialog_currentIdChanged(int id)
     LibraryFolder folder = libraryFolders.at(ui->installLocationBox->currentIndex());
 
     if (!folder.canFitGame) {
-        this->setCurrentId(0);
+        //this->setCurrentId(0);
         QMessageBox msgBox;
         msgBox.setText("Not enough available space in target drive.");
         msgBox.exec();
@@ -113,7 +113,7 @@ void InstallGameDialog::installFailed(EAppUpdateError err) {
     if (err == 0)
         return;
 
-    this->setCurrentId(0);
+    //this->setCurrentId(0);
     QMessageBox msgBox;
     msgBox.setText(QString("Failed to install: %1").arg(QString::fromStdString(ErrMsgUtils::GetErrorMessageFromEAppUpdateError(err))));
     msgBox.exec();
